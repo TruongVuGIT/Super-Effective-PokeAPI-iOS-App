@@ -64,7 +64,13 @@ class ViewController: UIViewController {
             
         //Parsing the JSON Data
             //self.EffectivenessOutput.text =
-                print(jsonResult["name"] as! String)
+            print(jsonResult["name"] as! String)
+           // print(jsonResult["damage_relations"] as! NSDictionary);
+            let PokeDictionary:NSDictionary = jsonResult["damage_relations"] as! NSDictionary
+            //print(PokeDictionary.value(forKey: "half_damage_from"));
+            
+            let TypeDirectionary:NSArray = PokeDictionary.value(forKey: "half_damage_from") as! NSArray;
+            print(TypeDirectionary.value(forKey: "name"));
             print("Hello");
         })
        
